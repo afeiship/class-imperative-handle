@@ -28,12 +28,22 @@ npm install -S afeiship/react-checkbox
         <div className="app-container">
           <label>
             <ReactCheckbox
+              indeterminate
               defaultValue={true}
               onChange={(e) => {
                 console.log('e.target.value', e.target.value);
               }}
             />
-            <span>一个复选框</span>
+            <span>A checkbox indeterminate</span>
+          </label>
+          <label>
+            <ReactCheckbox
+              defaultValue={true}
+              onChange={(e) => {
+                console.log('e.target.value', e.target.value);
+              }}
+            />
+            <span>A checkbox</span>
           </label>
         </div>
       );
@@ -45,3 +55,4 @@ npm install -S afeiship/react-checkbox
 
 ## documentation
 - https://afeiship.github.io/react-checkbox/
+- https://www.jb51.net/web/82262.html
