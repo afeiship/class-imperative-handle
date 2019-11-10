@@ -10,12 +10,22 @@ class App extends React.Component {
       <div className="app-container">
         <label>
           <ReactCheckbox
+            indeterminate
             defaultValue={true}
             onChange={(e) => {
               console.log('e.target.value', e.target.value);
             }}
           />
-          <span>一个复选框</span>
+          <span>A checkbox indeterminate</span>
+        </label>
+        <label>
+          <ReactCheckbox
+            defaultValue={true}
+            onChange={(e) => {
+              console.log('e.target.value', e.target.value);
+            }}
+          />
+          <span>A checkbox</span>
         </label>
       </div>
     );

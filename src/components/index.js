@@ -15,6 +15,7 @@ export default class extends Component {
     className: PropTypes.string,
     value: PropTypes.bool,
     defaultValue: PropTypes.bool,
+    indeterminate: PropTypes.bool,
     onChange: PropTypes.func
   };
 
@@ -23,23 +24,34 @@ export default class extends Component {
   };
   /*===properties end===*/
 
-  _onChange = (inEvent) => {
+  componentDidMount() {
+    const { indeterminate } = this.props;
+    this.root.indeterminate = indeterminate;
+  }
+
+  onChange = (inEvent) => {
     const { onChange } = this.props;
     const checked = inEvent.target.checked;
-    onChange({
-      target: { value: checked }
-    });
+    const target = { value: checked };
+    onChange({ target });
   };
 
   render() {
-    const { className, defaultValue, onChange, ...props } = this.props;
+    const {
+      className,
+      defaultValue,
+      onChange,
+      indeterminate,
+      ...props
+    } = this.props;
     return (
       <input
         type="checkbox"
         data-component={CLASS_NAME}
         defaultChecked={defaultValue}
         className={classNames(CLASS_NAME, className)}
-        onChange={this._onChange}
+        onChange={this.onChange}
+        ref={(root) => (this.root = root)}
         {...props}
       />
     );
