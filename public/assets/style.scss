@@ -13,9 +13,7 @@ body,
 
 .app-container {
   padding: 50px;
-  label{
-    display: block;
-  }
+  box-sizing: border-box;
   .button {
     background: #3cc51f;
     width: 100%;

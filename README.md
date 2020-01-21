@@ -1,15 +1,27 @@
 # react-checkbox
 > Pure checkbox for react.
 
-## install
+## installation
 ```shell
-npm install -S afeiship/react-checkbox
+npm install -S @feizheng/react-checkbox
 ```
+
+## update
+```shell
+npm update @feizheng/react-checkbox
+```
+
+## properties
+| property  | type   | default | description |
+| --------- | ------ | ------- | ----------- |
+| className | String | -       | -           |
+| value     | -      | -       | -           |
+| onChange  | -      | -       | -           |
 
 ## usage
 1. import css
   ```scss
-  @import "~react-checkbox/style.scss";
+  @import "~@feizheng/react-checkbox/dist/style.scss";
 
   // customize your styles:
   $react-checkbox-options: ()
@@ -55,4 +67,3 @@ npm install -S afeiship/react-checkbox
 
 ## documentation
 - https://afeiship.github.io/react-checkbox/
-- https://www.jb51.net/web/82262.html
