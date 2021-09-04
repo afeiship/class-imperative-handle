@@ -15,7 +15,22 @@ npm install @jswork/class-imperative-handle
 ```js
 import classImperativeHandle from '@jswork/class-imperative-handle';
 
-// usage goes here.
+class MyComponent extends Component {
+  handleRef = (inRoot) => {
+    const { forwardedRef } = this.props;
+    classImperativeHandle(forwardedRef, inRoot);
+    this.root = inRoot;
+  };
+
+  render() {
+    return (
+      <div
+        ref={this.handleRef}
+        {...this.props}
+      />
+    );
+  }
+}
 ```
 
 ## license
