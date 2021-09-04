@@ -1,6 +1,14 @@
+const OBJ = 'object';
+const FUNC = 'function';
+
+/**
+ * React `useImperativeHandle` for class component.
+ * @param forwardedRef
+ * @param refObj
+ */
 export default (forwardedRef, refObj) => {
   if (forwardedRef) {
-    typeof forwardedRef === 'object' && (forwardedRef.current = refObj);
-    typeof forwardedRef === 'function' && forwardedRef(refObj);
+    typeof forwardedRef === OBJ && (forwardedRef.current = refObj);
+    typeof forwardedRef === FUNC && forwardedRef(refObj);
   }
 };
