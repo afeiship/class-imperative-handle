@@ -31,6 +31,10 @@ class MyComponent extends Component {
     );
   }
 }
+
+export default React.forwardRef((props: ReactCheckboxProps, ref: any) => (
+  <MyComponent {...props} ref={ref} />
+));
 ```
 
 ## license
